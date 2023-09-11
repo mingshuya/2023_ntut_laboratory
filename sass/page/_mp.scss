@@ -1,0 +1,170 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// more按鈕
+a.more {
+    display: block;
+    width: 10em;
+    text-align: center;
+    height: 2.5em;
+    margin: .5em auto .5em;
+    line-height: 2.5;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        right: -10px;
+        top: 14px;
+        border-left: none;
+        border-bottom: none;
+        transition: .3s ease-out;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primaryColor;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    &:hover,
+    &:focus,
+    &.active {
+        color: white;
+        &:before {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        &:after {
+            right: 15px;
+        }
+    }
+}
+
+.mp{
+    .counter{
+        position: absolute;
+        bottom:1em;
+        left:2em;
+        font-size: 0.813em;
+        margin: 0;
+        // bottom:1.3em;
+        // left:2.5em;
+        em {
+            font-style: normal;
+            padding: 0 .5em;
+        }
+    }   
+}
+
+.mplogo{
+    min-height: 65vh;
+    h1{
+        margin-top: 28.5vh;
+        color:#020d45;
+        font-size: 2em;
+        line-height: 1.35em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        img{
+            width: 340px;
+        }
+        .eng{
+            display: block;
+            color:#353d6b!important;
+            line-height: 1.35em;
+            font-weight: 600;
+            letter-spacing: 0;
+            font-size: .75em;
+        }
+        @include screen('mobile') {
+            margin-top: 10vh;
+            img{
+                width: 320px;
+            }
+            .eng{
+                display: block;
+                color:#353d6b!important;
+                line-height: 1.35em;
+                font-weight: 600;
+                letter-spacing: 0;
+                font-size: .65em;
+            }
+        }
+    }
+    h2{
+        border-left: 4px solid transparent;
+        -moz-border-image: -moz-linear-gradient(top left, #0A2696 0%, #069683 50%, #069683 100%);
+        -webkit-border-image: -webkit-linear-gradient(top left, #0A2696 0%, #069683 50%, #069683 100%);
+        border-image: linear-gradient(to bottom right, #0A2696 0%, #069683 50%, #069683 100%);
+        border-image-slice: 1;
+        font-size: 1.25em;
+        line-height: 1.4em;
+        color:#010e45;
+        letter-spacing:1px;
+        padding-left: .8em;
+        font-weight: 500;
+        font-family: 'Noto Sans TC', sans-serif;
+        span{
+            display: block;
+        }
+        .eng{
+            font-size: .813em;
+            color:#333b69;
+            font-weight: normal;
+            line-height: 1.2em;
+            letter-spacing:1px;
+            margin-top: .5em;
+        }
+
+    }
+    .copyright{
+        position: absolute;
+        left:260px;
+        bottom:1em;
+        line-height: 1.4em;
+        font-size: .813em;
+        p{margin: 0;}
+        @include screen('mobile') {
+            position: fixed;
+            left:20px;
+            bottom:5px;
+        }
+    }
+}
+
+
+
+
+// 範例：
+// .demosection {
+//     [class^="col"] {
+//         border: 2px solid #FFF;
+//         background: #DEDEDE;
+//     }
+// }
